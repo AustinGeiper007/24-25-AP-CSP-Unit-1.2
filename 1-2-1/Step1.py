@@ -7,6 +7,7 @@ import random as rand
 spot_color = 'blue'
 spot_size = 2
 spot_shape = 'circle'
+score = 0
 
 #-----initialize turtle-----
 spot = trtl.Turtle()
@@ -21,7 +22,13 @@ def change_position():
     new_ypos = rand.randint(-375, 375)
     spot.goto(new_xpos, new_ypos)
 
+def update_score():
+    global score
+    score += 1
+    print(score)
+
 def spot_clicked(x, y):
+    update_score()
     change_position()
 
 #-----events----------------
