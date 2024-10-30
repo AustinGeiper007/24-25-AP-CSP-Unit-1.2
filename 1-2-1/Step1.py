@@ -1,9 +1,10 @@
 # a121_catch_a_turtle.py
 #-----import statements-----
 import turtle as trtl
+import random as rand
 
 #-----game configuration----
-spot_color = 'pink'
+spot_color = 'blue'
 spot_size = 2
 spot_shape = 'circle'
 
