@@ -13,10 +13,16 @@ spot = trtl.Turtle()
 spot.shape(spot_shape)
 spot.shapesize(spot_size)
 spot.color(spot_color)
+spot.penup()
 
 #-----game functions--------
+def change_position():
+    new_xpos = rand.randint(-450, 450)
+    new_ypos = rand.randint(-375, 375)
+    spot.goto(new_xpos, new_ypos)
+
 def spot_clicked(x, y):
-    print("HELLO WORLD!!!")
+    change_position()
 
 #-----events----------------
 spot.onclick(spot_clicked)
