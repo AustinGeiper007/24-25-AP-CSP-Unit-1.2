@@ -47,11 +47,14 @@ def spot_clicked(x, y):
     change_position()
 
 #-----events----------------
-'''Field size testing code. Removed comments if use needed
+'''Field size testing code. Removed comments if use needed.
+Used to determine size of area spot can move too. Very crude methodology'''
+'''
 spot.speed(0)
 spot.pendown()
 while True:
-    change_position()'''
+    change_position()
+'''
 spot.onclick(spot_clicked)
 wn = trtl.Screen()
 wn.mainloop()
