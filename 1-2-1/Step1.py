@@ -77,7 +77,8 @@ def countdown():
 #-----events----------------
 '''
 Field size testing code below. Removed comments if use needed.
-Used to determine size of area spot can move too. Very crude methodology
+Used to determine size of area spot can move too
+Very crude methodology, I am aware
 '''
 '''
 spot.speed(0)
