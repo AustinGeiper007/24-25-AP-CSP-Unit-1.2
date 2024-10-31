@@ -14,6 +14,10 @@ font_setup = "Arial", 20, "normal"
 score = 0
 written_score = "Score: " + str(score)
 
+timer = 30
+counter_interval = 1000 #1000 is equal to 1 second
+timer_up = False
+
 #-----initialize turtle(s)-----
 spot = trtl.Turtle()
 spot.shape(spot_shape)
@@ -27,6 +31,13 @@ score_writer.penup()
 score_writer.speed(0)
 score_writer.goto(350, 350)
 score_writer.hideturtle()
+
+counter = trtl.Turtle()
+counter.hideturtle()
+counter.penup()
+counter.speed(0)
+counter.goto(-450, 350)
+counter.pendown()
 
 #-----game functions--------
 def change_position():
@@ -43,8 +54,25 @@ def update_score():
     score_writer.write(written_score, font=font_setup)
 
 def spot_clicked(x, y):
-    update_score()
-    change_position()
+    global timer_up
+    if timer_up == False:
+        update_score()
+        change_position()
+    elif timer_up == True:
+        spot.hideturtle()
+    else:
+        print("Error. Reboot...")
+
+def countdown():
+    global timer, timer_up
+    counter.clear()
+    if timer <= 0:
+        counter.write("Time's Up", font=font_setup)
+        timer_up = True
+    else:
+        counter.write("Timer: " + str(timer), font=font_setup)
+        timer -= 1
+        counter.getscreen().ontimer(countdown, counter_interval)
 
 #-----events----------------
 '''Field size testing code. Removed comments if use needed.
@@ -57,4 +85,5 @@ while True:
 '''
 spot.onclick(spot_clicked)
 wn = trtl.Screen()
+wn.ontimer(countdown, counter_interval)
 wn.mainloop()
