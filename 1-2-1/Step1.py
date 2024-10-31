@@ -75,8 +75,10 @@ def countdown():
         counter.getscreen().ontimer(countdown, counter_interval)
 
 #-----events----------------
-'''Field size testing code. Removed comments if use needed.
-Used to determine size of area spot can move too. Very crude methodology'''
+'''
+Field size testing code below. Removed comments if use needed.
+Used to determine size of area spot can move too. Very crude methodology
+'''
 '''
 spot.speed(0)
 spot.pendown()
