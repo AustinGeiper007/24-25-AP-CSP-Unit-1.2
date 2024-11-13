@@ -56,7 +56,6 @@ def get_scores(file_name):
             index = index + 1
 
         # TODO 5: add the player score to the scores list
-        print("I'm here")
         scores.append(int(leader_score))
     print("scores:", scores)
 
