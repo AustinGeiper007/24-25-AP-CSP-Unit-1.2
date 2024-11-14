@@ -2,10 +2,11 @@
 import turtle as trtl
 
 #-----setup-----
-apple_image = "pear.gif" # Store the file name of your shape
+apple_image = "apple.gif" # Store the file name of your shape
 
 wn = trtl.Screen()
 wn.setup(width=1.0, height=1.0)
+wn.bgpic("background.gif")
 wn.addshape(apple_image) # Make the screen aware of the new file
 
 apple = trtl.Turtle()
