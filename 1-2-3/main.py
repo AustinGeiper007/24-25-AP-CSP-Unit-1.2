@@ -18,6 +18,8 @@ apple = trtl.Turtle()
 apple.penup()
 wn.tracer(False)
 
+letters_list = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
 #-----functions-----
 # given a turtle, set that turtle to be shaped by the image file
 def draw_apple(active_apple):
@@ -48,6 +50,10 @@ def draw_letter(letter, active_apple):
 #TODO Create a function that takes a turtle as its parameter and gives that turtle (apple)
 # a new location on the tree, only if the list of letters is not empty. Associate the
 # turtle with a new letter selected at random from the list of letters
+def tree(apple):
+  global letters_list
+  if len(letters_list) > 0:
+
 
 #TODO Create a function that takes a turtle (apple) and its corresponding letter from the letter
 # list and draws that letter on that turtle (apple)
