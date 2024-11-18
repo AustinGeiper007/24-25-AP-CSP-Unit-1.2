@@ -61,7 +61,7 @@ def draw_letter(letter, active_apple):
 # add the new apples to a list of apples to be used in the rest of the program.
 # The loop below executes the correct number of times by using the range() function
 # to create a list of numbers to iterate over.
-for i in range(0, number_of_apples):
+#for i in range(0, number_of_apples):
   #Your code here
 
 #TODO Create a function that takes a letter as its parameter, uses that letter to retrieve the
