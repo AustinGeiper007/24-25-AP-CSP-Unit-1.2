@@ -7,6 +7,7 @@ import turtle as trtl
 
 apple_image = "apple.gif" # Store the file name of your shape
 ground_height = -200
+apple_drop_speed = 2.75 # Default to 2.75
 apple_letter_x_offset = -25
 apple_letter_y_offset = -50
 
@@ -28,7 +29,9 @@ def draw_apple(active_apple):
 
 # This function moves the apple to the ground and hides it.
 def drop_apple():
+  global apple_drop_speed, apple_letter_x_offset, apple_letter_y_offset
   wn.tracer(True)
+  apple.speed(apple_drop_speed)
   apple.goto(apple.xcor(), ground_height)
   apple.clear()
   apple.hideturtle()
@@ -41,7 +44,7 @@ def draw_letter(letter, active_apple):
   active_apple.color("white")
   remember_position = active_apple.position()
   active_apple.setpos(active_apple.xcor() + apple_letter_x_offset,active_apple.ycor() + apple_letter_y_offset)
-  active_apple.write(letter, font=("Arial", 74, "bold"))
+  active_apple.write(letter, font=("Arial", 55, "bold"))
   active_apple.setpos(remember_position)
 
 #-----function calls-----
