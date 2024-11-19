@@ -2,6 +2,7 @@
 #-----setup-----
 import turtle as trtl
 import random as rand
+from random import randint
 
 apple_image = "apple.gif" # Store the file name of your shape
 ground_height = -200
@@ -18,13 +19,14 @@ apple = trtl.Turtle()
 apple.penup()
 wn.tracer(False)
 
-letters_list = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+lc_letters_list = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+letter = "a"
 
 #-----functions-----
 # given a turtle, set that turtle to be shaped by the image file
-def draw_apple(active_apple):
+def draw_apple(new_letter, active_apple):
   active_apple.shape(apple_image)
-  draw_letter("A", active_apple)
+  draw_letter(new_letter, active_apple)
   wn.update()
 
 # This function moves the apple to the ground and hides it.
@@ -36,6 +38,7 @@ def drop_apple():
   apple.clear()
   apple.hideturtle()
   wn.tracer(False)
+  reset_apple(apple)
 
 
 # letter is of type str
@@ -50,15 +53,19 @@ def draw_letter(letter, active_apple):
 #TODO Create a function that takes a turtle as its parameter and gives that turtle (apple)
 # a new location on the tree, only if the list of letters is not empty. Associate the
 # turtle with a new letter selected at random from the list of letters
-def tree(apple):
-  global letters_list
-  if len(letters_list) > 0:
+def reset_apple(apple):
+  global lc_letters_list, letter
+  if len(lc_letters_list) > 0:
+      new_letter_id = randint(0, len(lc_letters_list) - 1)
+      letter = lc_letters_list.pop(new_letter_id)
+      apple.penup()
+      apple.goto(randint(-200, 200), 150)
+      apple.showturtle()
+      draw_apple(letter, apple)
+      wn.update()
 
 
 #TODO Create a function that takes a turtle (apple) and its corresponding letter from the letter
-# list and draws that letter on that turtle (apple)
-
-#TODO Create a function that takes a turtle (apple) and its corresponding ltter from the letter
 # list and set that turtle to be shaped by the image file, call the letter drawing function,
 # and update the Screen
 
@@ -84,7 +91,7 @@ def tree(apple):
 # no arguments to be called when the specified key is pressed.
 
 #-----function calls-----
-draw_apple(apple)
+draw_apple(letter, apple)
 wn.onkeypress(drop_apple, "a")
 
 wn.listen() # Tells the window to look for keypresses
