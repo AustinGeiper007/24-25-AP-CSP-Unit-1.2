@@ -13,18 +13,19 @@ apple_letter_y_offset = -50
 wn = trtl.Screen()
 wn.setup(width=1.0, height=1.0)
 wn.addshape(apple_image) # Make the screen aware of the new file
-
 wn.bgpic("background.gif")
+
 apple = trtl.Turtle()
 apple.penup()
 wn.tracer(False)
 
 lc_letters_list = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-letter = "a"
+letter = 'a'
 
 #-----functions-----
 # given a turtle, set that turtle to be shaped by the image file
 def draw_apple(new_letter, active_apple):
+  active_apple.showturtle()
   active_apple.shape(apple_image)
   draw_letter(new_letter, active_apple)
   wn.update()
@@ -50,9 +51,7 @@ def draw_letter(letter, active_apple):
   active_apple.write(letter, font=("Arial", 55, "bold"))
   active_apple.setpos(remember_position)
 
-#TODO Create a function that takes a turtle as its parameter and gives that turtle (apple)
-# a new location on the tree, only if the list of letters is not empty. Associate the
-# turtle with a new letter selected at random from the list of letters
+
 def reset_apple(apple):
   global lc_letters_list, letter
   if len(lc_letters_list) > 0:
@@ -60,7 +59,6 @@ def reset_apple(apple):
       letter = lc_letters_list.pop(new_letter_id)
       apple.penup()
       apple.goto(randint(-200, 200), 150)
-      apple.showturtle()
       draw_apple(letter, apple)
       wn.update()
 
@@ -79,7 +77,7 @@ def reset_apple(apple):
 
 #TODO Create a function that takes a letter as its parameter, uses that letter to retrieve the
 # corresponding turtle (apple) and causes both to drop from the tree simultaneously. Once the
-# apple and letter have dropped, call the apple reseting function.
+# apple and letter have dropped, call the apple resetting function.
 
 #TODO define a function per letter that you will use in your program. Each function should check
 # to see if the given letter is in the list of letters; if it is, it should drop the corresponding
@@ -92,7 +90,7 @@ def reset_apple(apple):
 
 #-----function calls-----
 draw_apple(letter, apple)
-wn.onkeypress(drop_apple, "a")
+wn.onkeypress(drop_apple, str(letter))
 
 wn.listen() # Tells the window to look for keypresses
 wn.mainloop()
