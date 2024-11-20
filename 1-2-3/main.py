@@ -63,107 +63,107 @@ def reset_apple(apple):
 
 
 def check_apple_a():
-    if ('a' in apple_letters):
+    if 'a' in apple_letters:
         drop_apple()
 
 def check_apple_b():
-    if ('b' in apple_letters):
+    if 'b' in apple_letters:
         drop_apple()
 
 def check_apple_c():
-    if ('c' in apple_letters):
+    if 'c' in apple_letters:
         drop_apple()
 
 def check_apple_d():
-    if ('d' in apple_letters):
+    if 'd' in apple_letters:
         drop_apple()
 
 def check_apple_e():
-    if ('e' in apple_letters):
+    if 'e' in apple_letters:
         drop_apple()
 
 def check_apple_f():
-    if ('f' in apple_letters):
+    if 'f' in apple_letters:
         drop_apple()
 
 def check_apple_g():
-    if ('g' in apple_letters):
+    if 'g' in apple_letters:
         drop_apple()
 
 def check_apple_h():
-    if ('h' in apple_letters):
+    if 'h' in apple_letters:
         drop_apple()
 
 def check_apple_i():
-    if ('i' in apple_letters):
+    if 'i' in apple_letters:
         drop_apple()
 
 def check_apple_j():
-    if ('j' in apple_letters):
+    if 'j' in apple_letters:
         drop_apple()
 
 def check_apple_k():
-    if ('k' in apple_letters):
+    if 'k' in apple_letters:
         drop_apple()
 
 def check_apple_l():
-    if ('l' in apple_letters):
+    if 'l' in apple_letters:
         drop_apple()
 
 def check_apple_m():
-    if ('m' in apple_letters):
+    if 'm' in apple_letters:
         drop_apple()
 
 def check_apple_n():
-    if ('n' in apple_letters):
+    if 'n' in apple_letters:
         drop_apple()
 
 def check_apple_o():
-    if ('o' in apple_letters):
+    if 'o' in apple_letters:
         drop_apple()
 
 def check_apple_p():
-    if ('p' in apple_letters):
+    if 'p' in apple_letters:
         drop_apple()
 
 def check_apple_q():
-    if ('q' in apple_letters):
+    if 'q' in apple_letters:
         drop_apple()
 
 def check_apple_r():
-    if ('r' in apple_letters):
+    if 'r' in apple_letters:
         drop_apple()
 
 def check_apple_s():
-    if ('s' in apple_letters):
+    if 's' in apple_letters:
         drop_apple()
 
 def check_apple_t():
-    if ('t' in apple_letters):
+    if 't' in apple_letters:
         drop_apple()
 
 def check_apple_u():
-    if ('u' in apple_letters):
+    if 'u' in apple_letters:
         drop_apple()
 
 def check_apple_v():
-    if ('v' in apple_letters):
+    if 'v' in apple_letters:
         drop_apple()
 
 def check_apple_w():
-    if ('w' in apple_letters):
+    if 'w' in apple_letters:
         drop_apple()
 
 def check_apple_x():
-    if ('x' in apple_letters):
+    if 'x' in apple_letters:
         drop_apple()
 
 def check_apple_y():
-    if ('y' in apple_letters):
+    if 'y' in apple_letters:
         drop_apple()
 
 def check_apple_z():
-    if ('z' in apple_letters):
+    if 'z' in apple_letters:
         drop_apple()
 
 #-----function calls-----
