@@ -60,7 +60,6 @@ def reset_apple(apple):
       apple.penup()
       apple.goto(randint(-200, 200), 150)
       draw_apple(letter, apple)
-      wn.update()
 
 
 #TODO Create a function that takes a turtle (apple) and its corresponding letter from the letter
