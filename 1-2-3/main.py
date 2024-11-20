@@ -1,7 +1,6 @@
 #   a123_apple_1.py
 #-----setup-----
 import turtle as trtl
-import random as rand
 from random import randint
 
 apple_image = "apple.gif" # Store the file name of your shape
@@ -20,7 +19,7 @@ apple.penup()
 wn.tracer(False)
 
 lc_letters_list = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-letter = 'a'
+apple_letters = ['a']
 
 #-----functions-----
 # given a turtle, set that turtle to be shaped by the image file
@@ -38,6 +37,7 @@ def drop_apple():
   apple.goto(apple.xcor(), ground_height)
   apple.clear()
   apple.hideturtle()
+  apple_letters.pop()
   wn.tracer(False)
   reset_apple(apple)
 
@@ -53,13 +53,13 @@ def draw_letter(letter, active_apple):
 
 
 def reset_apple(apple):
-  global lc_letters_list, letter
+  global lc_letters_list
   if len(lc_letters_list) > 0:
       new_letter_id = randint(0, len(lc_letters_list) - 1)
-      letter = lc_letters_list[new_letter_id]
+      apple_letters.append(lc_letters_list[new_letter_id])
       apple.penup()
       apple.goto(randint(-200, 200), 150)
-      draw_apple(letter, apple)
+      draw_apple(apple_letters[0], apple)
 
 
 #TODO Create a function that takes a turtle (apple) and its corresponding letter from the letter
@@ -87,9 +87,138 @@ def reset_apple(apple):
 # onkeypress requires that you name one function that must take
 # no arguments to be called when the specified key is pressed.
 
+def check_apple_a():
+    if ('a' in apple_letters):
+        drop_apple()
+
+def check_apple_b():
+    if ('b' in apple_letters):
+        drop_apple()
+
+def check_apple_c():
+    if ('c' in apple_letters):
+        drop_apple()
+
+def check_apple_d():
+    if ('d' in apple_letters):
+        drop_apple()
+
+def check_apple_e():
+    if ('e' in apple_letters):
+        drop_apple()
+
+def check_apple_f():
+    if ('f' in apple_letters):
+        drop_apple()
+
+def check_apple_g():
+    if ('g' in apple_letters):
+        drop_apple()
+
+def check_apple_h():
+    if ('h' in apple_letters):
+        drop_apple()
+
+def check_apple_i():
+    if ('i' in apple_letters):
+        drop_apple()
+
+def check_apple_j():
+    if ('j' in apple_letters):
+        drop_apple()
+
+def check_apple_k():
+    if ('k' in apple_letters):
+        drop_apple()
+
+def check_apple_l():
+    if ('l' in apple_letters):
+        drop_apple()
+
+def check_apple_m():
+    if ('m' in apple_letters):
+        drop_apple()
+
+def check_apple_n():
+    if ('n' in apple_letters):
+        drop_apple()
+
+def check_apple_o():
+    if ('o' in apple_letters):
+        drop_apple()
+
+def check_apple_p():
+    if ('p' in apple_letters):
+        drop_apple()
+
+def check_apple_q():
+    if ('q' in apple_letters):
+        drop_apple()
+
+def check_apple_r():
+    if ('r' in apple_letters):
+        drop_apple()
+
+def check_apple_s():
+    if ('s' in apple_letters):
+        drop_apple()
+
+def check_apple_t():
+    if ('t' in apple_letters):
+        drop_apple()
+
+def check_apple_u():
+    if ('u' in apple_letters):
+        drop_apple()
+
+def check_apple_v():
+    if ('v' in apple_letters):
+        drop_apple()
+
+def check_apple_w():
+    if ('w' in apple_letters):
+        drop_apple()
+
+def check_apple_x():
+    if ('x' in apple_letters):
+        drop_apple()
+
+def check_apple_y():
+    if ('y' in apple_letters):
+        drop_apple()
+
+def check_apple_z():
+    if ('z' in apple_letters):
+        drop_apple()
+
 #-----function calls-----
-draw_apple(letter, apple)
-wn.onkeypress(drop_apple, str(letter))
+draw_apple(apple_letters[0], apple)
+wn.onkeypress(check_apple_a, 'a')
+wn.onkeypress(check_apple_b, 'b')
+wn.onkeypress(check_apple_c, 'c')
+wn.onkeypress(check_apple_d, 'd')
+wn.onkeypress(check_apple_e, 'e')
+wn.onkeypress(check_apple_f, 'f')
+wn.onkeypress(check_apple_g, 'g')
+wn.onkeypress(check_apple_h, 'h')
+wn.onkeypress(check_apple_i, 'i')
+wn.onkeypress(check_apple_j, 'j')
+wn.onkeypress(check_apple_k, 'k')
+wn.onkeypress(check_apple_l, 'l')
+wn.onkeypress(check_apple_m, 'm')
+wn.onkeypress(check_apple_n, 'n')
+wn.onkeypress(check_apple_o, 'o')
+wn.onkeypress(check_apple_p, 'p')
+wn.onkeypress(check_apple_q, 'q')
+wn.onkeypress(check_apple_r, 'r')
+wn.onkeypress(check_apple_s, 's')
+wn.onkeypress(check_apple_t, 't')
+wn.onkeypress(check_apple_u, 'u')
+wn.onkeypress(check_apple_v, 'v')
+wn.onkeypress(check_apple_w, 'w')
+wn.onkeypress(check_apple_x, 'x')
+wn.onkeypress(check_apple_y, 'y')
+wn.onkeypress(check_apple_z, 'z')
 
 wn.listen() # Tells the window to look for keypresses
 wn.mainloop()
