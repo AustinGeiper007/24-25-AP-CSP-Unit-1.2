@@ -42,7 +42,6 @@ def drop_apple():
   reset_apple(apple)
 
 
-# letter is of type str
 # active_apple is a turtle
 def draw_letter(letter, active_apple):
   active_apple.color("white")
