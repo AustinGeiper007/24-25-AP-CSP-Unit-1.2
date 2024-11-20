@@ -56,7 +56,7 @@ def reset_apple(apple):
   global lc_letters_list, letter
   if len(lc_letters_list) > 0:
       new_letter_id = randint(0, len(lc_letters_list) - 1)
-      letter = lc_letters_list.pop(new_letter_id)
+      letter = lc_letters_list[new_letter_id]
       apple.penup()
       apple.goto(randint(-200, 200), 150)
       draw_apple(letter, apple)
