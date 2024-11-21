@@ -60,7 +60,8 @@ def reset_apple(apple):
       apple.goto(randint(-200, 200), 150)
       draw_apple(apple_letters[0], apple)
 
-
+# Here are all the checks for letters
+# Very Brute force, very lengthy
 def check_apple_a():
     if 'a' in apple_letters:
         drop_apple()
@@ -167,6 +168,8 @@ def check_apple_z():
 
 #-----function calls-----
 draw_apple(apple_letters[0], apple)
+# All keypress functions
+# Very brute force
 wn.onkeypress(check_apple_a, 'a')
 wn.onkeypress(check_apple_b, 'b')
 wn.onkeypress(check_apple_c, 'c')
