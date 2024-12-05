@@ -33,14 +33,14 @@ def draw_door():
     maze_painter.forward(path_width)
     maze_painter.pendown()
 
-def barrier_first(door, barrier):
+def barrier_first():
     maze_painter.forward(barrier)
     draw_barrier()
     maze_painter.forward(barrier - door)
     draw_door()
     maze_painter.forward(wall_len - barrier - door)
 
-def door_first(door, barrier):
+def door_first():
     maze_painter.forward(door)
     draw_door()
     maze_painter.forward(door - barrier)
