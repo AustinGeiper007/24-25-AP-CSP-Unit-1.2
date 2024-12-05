@@ -28,18 +28,27 @@ def draw_barrier():
     maze_painter.backward(path_width)
     maze_painter.left(90)
 
-
+#just so there isn't a random blip in the beginning
+maze_painter.penup()
 
 for wall in range(21):
+    # Gen Rand
+    if(wall > 5):
+        door = rand.randint(path_width * 2, (wall_len - path_width * 2))
+        barrier = rand.randint(path_width * 2, (wall_len - path_width * 2))
+    else:
+        door = wall_len / 3
+    # Beginning of wall
     maze_painter.forward(wall_len / 3)
+    # Making door
     maze_painter.penup()
     maze_painter.forward(path_width)
     maze_painter.pendown()
     if(wall > 5):
-        barrier = rand.randint(path_width * 2, (wall_len - path_width * 2))
-        door = rand.randint(path_width * 2, (wall_len - path_width * 2))
         draw_barrier()
+    # Remaining wall
     maze_painter.forward(wall_len - path_width - (wall_len / 3))
+    # setup next wall
     maze_painter.left(90)
     wall_len += 15
 
