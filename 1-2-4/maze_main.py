@@ -1,7 +1,7 @@
 import turtle as trtl
 import random as rand
 
-# Intialize Variables
+# Initialize Variables
 wn = trtl.Screen()
 maze_painter = trtl.Turtle()
 wall_len = 35
