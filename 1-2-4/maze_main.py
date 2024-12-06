@@ -52,7 +52,7 @@ maze_painter.penup()
 
 for wall in range(33):
     # Gen Rand
-    if(wall > 5):
+    if wall > 5:
         door = rand.randint(path_width, (wall_len - path_width))
         barrier = rand.randint(path_width, (wall_len - path_width))
     else:
@@ -63,7 +63,7 @@ for wall in range(33):
 
     # Making door
     draw_door()
-    if(wall > 5):
+    if wall > 5:
         draw_barrier()
 
     # Remaining wall
