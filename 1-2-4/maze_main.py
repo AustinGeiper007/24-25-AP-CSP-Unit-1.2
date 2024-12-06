@@ -23,17 +23,20 @@ maze_painter.speed(0)
 # Increment Length
 # Repeat
 def draw_barrier():
+    global wall_len, door, barrier, path_width
     maze_painter.right(90)
     maze_painter.forward(path_width)
     maze_painter.backward(path_width)
     maze_painter.left(90)
 
 def draw_door():
+    global wall_len, door, barrier, path_width
     maze_painter.penup()
     maze_painter.forward(path_width)
     maze_painter.pendown()
 
 def barrier_first():
+    global wall_len, door, barrier, path_width
     maze_painter.forward(barrier)
     draw_barrier()
     maze_painter.forward(barrier - door)
@@ -41,6 +44,7 @@ def barrier_first():
     maze_painter.forward(wall_len - barrier - door)
 
 def door_first():
+    global wall_len, door, barrier, path_width
     maze_painter.forward(door)
     draw_door()
     maze_painter.forward(door - barrier)
