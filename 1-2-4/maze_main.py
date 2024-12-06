@@ -30,26 +30,33 @@ def draw_barrier():
     maze_painter.left(90)
 
 def draw_door():
-    global wall_len, door, barrier, path_width
+    global path_width
     maze_painter.penup()
     maze_painter.forward(path_width)
     maze_painter.pendown()
+
+def first_5_iterations():
+    global door, wall_len, path_width
+    door = wall_len / 3
+    maze_painter.forward(wall_len / 3)
+    draw_door()
+    maze_painter.forward(wall_len - path_width - (wall_len / 3))
 
 def barrier_first():
     global wall_len, door, barrier, path_width
     maze_painter.forward(barrier)
     draw_barrier()
-    maze_painter.forward(barrier - door)
+    maze_painter.forward(door - barrier)
     draw_door()
-    maze_painter.forward(wall_len - barrier - door)
+    maze_painter.forward(wall_len - barrier - (door - barrier) - path_width)
 
 def door_first():
     global wall_len, door, barrier, path_width
     maze_painter.forward(door)
     draw_door()
-    maze_painter.forward(door - barrier)
+    maze_painter.forward(barrier - door - path_width)
     draw_barrier()
-    maze_painter.forward(wall_len - door - barrier)
+    maze_painter.forward(wall_len - door - (barrier - door - path_width) - path_width)
 
 #just so there isn't a random blip in the beginning
 maze_painter.penup()
@@ -59,19 +66,15 @@ for wall in range(33):
     if wall > 5:
         door = rand.randint(path_width, (wall_len - path_width))
         barrier = rand.randint(path_width, (wall_len - path_width))
+        if door > barrier:
+            barrier_first()
+        elif door < barrier:
+            door_first()
+        else:
+            first_5_iterations()
+
     else:
-        door = wall_len / 3
-
-    # Beginning of wall
-    maze_painter.forward(wall_len / 3)
-
-    # Making door
-    draw_door()
-    if wall > 5:
-        draw_barrier()
-
-    # Remaining wall
-    maze_painter.forward(wall_len - path_width - (wall_len / 3))
+        first_5_iterations()
 
     # setup next wall
     maze_painter.left(90)
