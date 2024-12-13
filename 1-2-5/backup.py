@@ -29,16 +29,10 @@ paddle.shape('square')
 
 #-----functions-----
 def bounce_wall():
-    if ball.heading() == 45:
+    if ball.heading() == (45 or 225):
         ball.left(90)
         ball.color(rd.randint(50, 255), rd.randint(50, 255), rd.randint(50, 255))
-    elif ball.heading() == 135:
-        ball.right(90)
-        ball.color(rd.randint(50, 255), rd.randint(50, 255), rd.randint(50, 255))
-    elif ball.heading() == 225:
-        ball.left(90)
-        ball.color(rd.randint(50, 255), rd.randint(50, 255), rd.randint(50, 255))
-    elif ball.heading() == 315:
+    elif ball.heading() == (135 or 315):
         ball.right(90)
         ball.color(rd.randint(50, 255), rd.randint(50, 255), rd.randint(50, 255))
 
