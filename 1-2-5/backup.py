@@ -68,6 +68,8 @@ while True:
     ball.forward(2)
     wn.onkeypress(paddle_left, "a")
     wn.onkeypress(paddle_right, "d")
+    wn.onkeypress(paddle_left, "Left")
+    wn.onkeypress(paddle_right, "Right")
     wn.listen()
     if ball.xcor() <= -100 or ball.xcor() >= 100:
         bounce_wall()
