@@ -13,6 +13,7 @@ wn.colormode(255)
 
 wn.bgcolor('black')
 
+#-----Initialize ball--------
 ball = t.Turtle()
 ball.shape('circle')
 ball.color(rd.randint(50,255),rd.randint(50,255),rd.randint(50,255))
@@ -20,12 +21,21 @@ ball.setheading(45)
 ball.speed(3)
 ball.penup()
 
+#-----Initialize Paddle-----
 paddle = t.Turtle()
 paddle.speed('fastest')
 paddle.penup()
 paddle.color('white')
 paddle.goto(0,-50)
 paddle.shape('square')
+
+#-----Initialize Score Writer
+score_trtl = t.Turtle()
+score_trtl.penup()
+score_trtl.speed(0)
+score_trtl.color('white')
+score_trtl.goto(-300,-200)
+score_trtl.hideturtle()
 
 #-----functions-----
 def bounce_wall():
