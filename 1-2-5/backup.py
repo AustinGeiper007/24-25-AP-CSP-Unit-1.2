@@ -72,6 +72,13 @@ def paddle_right():
     paddle.setheading(0)
     paddle.forward(2)
 
+
+def score_up_one():
+    global score
+    score += 1
+    score_trtl.clear()
+    score_trtl.write(str(score), font=("Helvetica", 32, "bold"))
+
 #-----events-----
 
 while True:
@@ -80,6 +87,7 @@ while True:
     wn.onkeypress(paddle_right, "d")
     wn.onkeypress(paddle_left, "Left")
     wn.onkeypress(paddle_right, "Right")
+    wn.onkeypress(score_up_one, "Up")
     wn.listen()
     if ball.xcor() <= -100 or ball.xcor() >= 100:
         bounce_wall()
